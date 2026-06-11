@@ -1,0 +1,113 @@
+ {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color:#2b1107;
+    }
+
+    h1 {
+      color: #dfe0ba;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 2vw + 3rem, 2rem);
+    }
+
+    
+    .texto-descritivo {
+      background-color: white;
+      top: 2;
+      padding: 0px;
+      margin: 0 auto;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      object-fit: cover;
+      
+      
+     /* texto*/
+      width: 90vw;
+      font-size: clamp(1rem, 1rem + 1rem, 2rem);    /* Tamanho da fonte */
+      line-height: 1.6;     /* Espaçamento entre linhas */
+      color: #333;        /*  Cor do texto */
+      text-align: justify;  /* Alinhamento*/
+    }
+
+    /* ESTILO DA GALERIA (Container) */
+    .galeria {
+      display: grid;
+      gap: 15px; /* Espaço entre as imagens */
+    }
+
+    /* Estilo das imagens para ficarem bonitas e responsivas */
+    .galeria img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+     
+    }
+    .imagemcapa img{
+      width: 100%;
+      border-radius: 8px;
+      height: -1090px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+     object-fit: contain;
+      gap: 15px; 
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.02); /* Pequeno zoom ao passar o mouse */
+    }
+    #wh_indicator{
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      color: grey;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    /* ---Media Queries --- */
+
+    /* Nível 1 – Telas pequenas (Até 480px) -> 1 Coluna */
+    @media (max-width: 480px) {
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+      .imagemcapa{
+        grid-template-columns: 1fr;
+      }
+       .texto-descritivo{
+         color: red;
+       }
+    }
+
+    /* Nível 2 – Tablets (481px a 768px) -> 2 Colunas */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .galeria {
+        
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Nível 3 – Desktop (769px ou mais) -> 3 Colunas */
+    @media (min-width: 769px) {
+      .galeria {
+        color: grey;
+        grid-template-columns: repeat(3, 1fr);
+      }
+       .imagemcapa{
+         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    
+    
